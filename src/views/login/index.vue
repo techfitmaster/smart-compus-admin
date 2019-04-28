@@ -30,6 +30,12 @@
           登录
         </el-button>
       </el-form-item>
+
+
+      <div class="tiparea" @click="register">
+        <p>还没账号？现在注册</p>
+      </div>
+
     </el-form>
   </div>
 </template>
@@ -77,6 +83,16 @@ export default {
     }
   },
   methods: {
+    register() {
+     // this.$router.push({ path:"/register" || '/' })
+
+      this.$router.push({
+        register,
+        query: {
+          t: +new Date() //保证每次点击路由的query项都是不一样的，确保会重新刷新view
+        }
+      })
+    },
     showPwd() {
       if (this.pwdType === 'password') {
         this.pwdType = ''
@@ -189,6 +205,15 @@ $light_gray:#eee;
     color: $dark_gray;
     cursor: pointer;
     user-select: none;
+  }
+
+  .tiparea {
+    text-align: right;
+    font-size: 12px;
+    color: #333;
+  }
+  .tiparea p a {
+    color: #FFFFFF;
   }
 }
 </style>
