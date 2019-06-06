@@ -26,6 +26,7 @@ import Register from '../views/register/index.vue'
 export const constantRouterMap = [
   //控制改路由是否显示
   {path: '/login', component: () => import('@/views/login/index'), hidden: true},
+  {path: '/resource', component: () => import('@/views/resource/index'), hidden: true},
   {path: '/404', component: () => import('@/views/404'), hidden: true},
   {path: '/register', component: Register, hidden: true},
   {
@@ -33,11 +34,11 @@ export const constantRouterMap = [
     component: Layout,
     redirect: '/dashboard',
     name: '纳乐智校',
-    meta: {title: '首页', icon: 'home'},
+    meta: {title: '首页', icon: ''},
     // hidden: true,
     children: [{
       path: 'dashboard',
-      meta: {title: '首页', icon: 'home'},
+      meta: {title: '首页', icon: ''},
       component: () => import('@/views/dashboard/index')
     }]
   },
@@ -46,19 +47,19 @@ export const constantRouterMap = [
     component: Layout,
     redirect: '/account/user',
     name: 'Account',
-    meta: {title: '账户管理', icon: 'example'},
+    meta: {title: '账户管理', icon: ''},
     children: [
       {
         path: 'user',
         name: 'User',
         component: () => import('@/views/account/user/index'),
-        meta: {title: '用户管理', icon: 'table'}
+        meta: {title: '用户管理', icon: ''}
       },
       {
         path: 'teacher',
         name: 'Teacher',
         component: () => import('@/views/account/teacher/index'),
-        meta: {title: '教师管理', icon: 'table'}
+        meta: {title: '教师管理', icon: ''}
       }
     ]
   },
@@ -68,108 +69,23 @@ export const constantRouterMap = [
     component: Layout,
     redirect: '/system/menu',
     name: 'System',
-    meta: {title: '系统管理', icon: 'example'},
+    meta: {title: '系统管理', icon: ''},
     children: [
       {
         path: 'menu',
         name: 'Menu',
         component: () => import('@/views/system/menu/index'),
-        meta: {title: '菜单管理', icon: 'table'}
+        meta: {title: '菜单管理', icon: ''}
       },
       {
         path: 'role',
         name: 'Role',
         component: () => import('@/views/system/role/index'),
-        meta: {title: '角色管理', icon: 'tree'}
+        meta: {title: '角色管理', icon: ''}
       }
     ]
   },
   {path: '*', redirect: '/404', hidden: true}
-
-  // {
-  //   path: '/form',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       name: 'Form',
-  //       component: () => import('@/views/form/index'),
-  //       meta: {title: 'Form', icon: 'form'}
-  //     }
-  //   ]
-  // },
-  //
-  // {
-  //   path: '/nested',
-  //   component: Layout,
-  //   redirect: '/nested/menu1',
-  //   name: 'Nested',
-  //   meta: {
-  //     title: 'Nested',
-  //     icon: 'nested'
-  //   },
-  //   children: [
-  //     {
-  //       path: 'menu1',
-  //       component: () => import('@/views/nested/menu1/index'), // Parent router-view
-  //       name: 'Menu1',
-  //       meta: {title: 'Menu1'},
-  //       children: [
-  //         {
-  //           path: 'menu1-1',
-  //           component: () => import('@/views/nested/menu1/menu1-1'),
-  //           name: 'Menu1-1',
-  //           meta: {title: 'Menu1-1'}
-  //         },
-  //         {
-  //           path: 'menu1-2',
-  //           component: () => import('@/views/nested/menu1/menu1-2'),
-  //           name: 'Menu1-2',
-  //           meta: {title: 'Menu1-2'},
-  //           children: [
-  //             {
-  //               path: 'menu1-2-1',
-  //               component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-  //               name: 'Menu1-2-1',
-  //               meta: {title: 'Menu1-2-1'}
-  //             },
-  //             {
-  //               path: 'menu1-2-2',
-  //               component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-  //               name: 'Menu1-2-2',
-  //               meta: {title: 'Menu1-2-2'}
-  //             }
-  //           ]
-  //         },
-  //         {
-  //           path: 'menu1-3',
-  //           component: () => import('@/views/nested/menu1/menu1-3'),
-  //           name: 'Menu1-3',
-  //           meta: {title: 'Menu1-3'}
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       path: 'menu2',
-  //       component: () => import('@/views/nested/menu2/index'),
-  //       meta: {title: 'menu2'}
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: 'external-link',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-  //       meta: {title: 'External Link', icon: 'link'}
-  //     }
-  //
-  //   ]
-  // },
-
-
 ]
 
 export default new Router({
